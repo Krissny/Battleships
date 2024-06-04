@@ -26,6 +26,7 @@ export class GameBoard {
       }
       return true;
     } else {
+      this.board[coord.x][coord.y] = "."; // A missed attack
       return false;
     }
   }
@@ -124,5 +125,16 @@ export class GameBoard {
         }
       }
     }
+  }
+
+  // All ships sunk or not
+  shipsSunk() {
+    let list = [this.s1, this.s2, this.s3, this.s4];
+    list.forEach((ship) => {
+      if (!ship.isSunk()) {
+        return false;
+      }
+    });
+    return false;
   }
 }
