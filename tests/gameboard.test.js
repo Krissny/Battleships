@@ -57,3 +57,8 @@ test("placeShips works correctly with invalid coordinates", () => {
     false
   );
 });
+
+test("All ships are sunk", () => {
+  const gameBoard = new GameBoard();
+  expect(gameBoard.shipsSunk()).toBe(false);
+});
