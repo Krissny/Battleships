@@ -47,6 +47,7 @@ function turn() {
 turn();
 
 function reset() {
+  tip.textContent = "click on reset to change ship arrangement";
   player1 = new Player("Krishna");
   player2 = new Player("Computer");
   flag = 1;
