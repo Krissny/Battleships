@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Battleship</title>
     <script src="main.js" type="module" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
-    <div class="player"></div>
-    <div class="computer"></div>
+    <div class="header">
+      <h1>Battleship</h1>
+    </div>
+    <div class="instructions">
+      <h3>Instructions</h3>
+      <p>🟩Green color indicates your ships location</p>
+      <p>🟥Red color indicates ship was attacked</p>
+      <p>☠️ indicates ship is completely destroyed</p>
+      <p><b>X</b> indicates a missed hit</p>
+    </div>
+    <div class="scoreCard">
+      <div>You</div>
+      <div>Computer</div>
+    </div>
+    <div class="container">
+      <div class="player1"></div>
+      <div class="player2"></div>
+    </div>
+    <div class="btn">
+      <button class="reset">Reset</button>
+    </div>
+    <div class="tip">click on reset to change ship arrangement</div>
   </body>
 </html>
