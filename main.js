@@ -15,10 +15,10 @@ let gameboard2 = creategrid(player2, turn);
 
 div1.appendChild(gameboard1);
 div2.appendChild(gameboard2);
-console.log(player2.gameboard.board);
+// console.log(player2.gameboard.board);
 
 function turn() {
-  console.log(player2.gameboard.board);
+  // console.log(player2.gameboard.board);
   setTimeout(checkWinner, 300);
   if (flag === 1) {
     gameboard1.classList.add("disabled");
@@ -29,7 +29,7 @@ function turn() {
     gameboard1.classList.add("disabled");
     gameboard2.classList.remove("disabled");
     const coord = player2.randomAttack();
-    console.log(coord);
+    // console.log(coord);
     player1.attacked(coord.x, coord.y);
     flag = 1;
     gameboard1 = creategrid(player1, turn);

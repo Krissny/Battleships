@@ -77,7 +77,7 @@ export class GameBoard {
         }
       }
       if (finalCoord.length < ship.length) {
-        console.log("runs4");
+        // console.log("runs4");
         return false;
       } else {
         ship.coords = finalCoord;
@@ -148,7 +148,7 @@ export class GameBoard {
         for (let i = 0; i < coords.length; i++) {
           let x = coords[i][0];
           let y = coords[i][1];
-          console.log(x, y);
+          // console.log(x, y);
           this.board[x][y] = "☠️";
         }
       }

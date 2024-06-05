@@ -45,6 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  font-size: larger;
 }
 .scoreCard {
   display: flex;

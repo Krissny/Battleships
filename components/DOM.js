@@ -10,7 +10,7 @@ export function creategrid(Player, turn) {
       cell.setAttribute("data-row", i);
       cell.setAttribute("data-col", j);
       if (Player.name != "Computer" && Player.gameboard.board[i][j] > 0) {
-        cell.style.background = "green";
+        cell.style.background = "#00d26a";
       }
       if (typeof Player.gameboard.board[i][j] != "number") {
         cell.textContent = Player.gameboard.board[i][j];
@@ -22,7 +22,7 @@ export function creategrid(Player, turn) {
       cell.addEventListener("click", (Event) => {
         let x = Event.currentTarget.dataset.row;
         let y = Event.currentTarget.dataset.col;
-        console.log(x, y);
+        // console.log(x, y);
         Player.attacked(x, y);
         if (typeof Player.gameboard.board[x][y] == "number") {
           Event.target.style.background = "red";
