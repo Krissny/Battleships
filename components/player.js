@@ -1,10 +1,11 @@
-import { GameBoard } from "./gameboard";
+import { GameBoard } from "./gameboard.js";
 
 export class Player {
   constructor(name) {
     this.name = name;
     this.gameboard = new GameBoard();
     this.gameboard.randomPlacement();
+    this.moves = new Set();
   }
   attacked(x1, y1) {
     let coord = {
@@ -16,9 +17,12 @@ export class Player {
 
   randomAttack() {
     let coord = {
-      x: Math.floor(Math.random * 10),
-      y: Math.floor(Math.random * 10),
+      x: Math.floor(Math.random() * 10),
+      y: Math.floor(Math.random() * 10),
     };
+    if (this.moves.has(coord)) {
+      return this.randomAttack();
+    }
     return coord;
   }
 }

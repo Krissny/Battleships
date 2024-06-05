@@ -1,4 +1,4 @@
-import { Ship } from "./ship";
+import { Ship } from "./ship.js";
 
 export class GameBoard {
   constructor() {
@@ -26,7 +26,7 @@ export class GameBoard {
       }
       return true;
     } else {
-      this.board[coord.x][coord.y] = "."; // A missed attack
+      this.board[coord.x][coord.y] = "X"; // A missed attack
       return false;
     }
   }
@@ -129,12 +129,29 @@ export class GameBoard {
 
   // All ships sunk or not
   shipsSunk() {
+    this.destroyed();
     let list = [this.s1, this.s2, this.s3, this.s4];
-    list.forEach((ship) => {
-      if (!ship.isSunk()) {
+    for (let i = 0; i < list.length; i++) {
+      if (!list[i].isSunk()) {
         return false;
       }
-    });
-    return false;
+    }
+    return true;
+  }
+  //how many ships sank
+
+  destroyed() {
+    let list = [this.s1, this.s2, this.s3, this.s4];
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].isSunk()) {
+        let coords = list[i].coords;
+        for (let i = 0; i < coords.length; i++) {
+          let x = coords[i][0];
+          let y = coords[i][1];
+          console.log(x, y);
+          this.board[x][y] = "☠️";
+        }
+      }
+    }
   }
 }
